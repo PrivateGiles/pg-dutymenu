@@ -26,10 +26,10 @@ AddEventHandler('esx_duty:toggleduty', function(job)
     
     if dutyjobsinfo[job] then
         xPlayer.setJob(dutyjobsinfo[job], grade)
-		TriggerClientEvent('esx_duty:Notify', source, 'inform', _U('offduty'))
+		TriggerClientEvent('okokNotify:Alert', source, 'ISRP Duty', 'You are now off duty', 3000, 'success')
     elseif offdutyjobsinfo[job] then
         xPlayer.setJob(offdutyjobsinfo[job], grade)
-        TriggerClientEvent('esx_duty:Notify', source, 'inform', _U('onduty'))
+		TriggerClientEvent('okokNotify:Alert', source, 'ISRP Duty', 'You are now on duty', 3000, 'success')
     end
 end)
 
